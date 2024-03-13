@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            height:300px;
+            width:300px;
+            margin-left:500px;
+        }
+        p{
+           
+            margin-left:500px;
+        }
+        #btn{
+            margin-left:630px;
+        }
+     
+    </style>
+</head>
+<body>
+    <div>
+    <img src="" alt="">
+    <P title=""></P>
+   </div>
+    <script>
+        var img=document.getElementsByTagName("img")//getting img
+        var src=localStorage.getItem("image");//accessing the image key
+        var p=document.getElementsByTagName("p")
+        //document.body.appendChild("p")
+        var title=localStorage.getItem("title")//acessing the title key
+        console.log(src)//ref
+        console.log(title)
+        var data=JSON.parse(src)//without psrse{"img":}
+        //converting string to object{img:"link"}
+        console.log(data)
+        img[0].setAttribute("src",data)
+        var d1=JSON.parse(title)
+        p[0].textContent=d1
+        var btn1=document.createElement("button");
+        document.body.appendChild(btn1)
+        btn1.innerText="go back";
+        btn1.setAttribute("id","btn")
+        btn1.addEventListener("click",function(){
+           
+            window.location.assign("index.html");
+        })
+    </script>
+</body>
+</html>
